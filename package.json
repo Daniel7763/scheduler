@@ -30,6 +30,7 @@
     ]
   },
   "devDependencies": {
+    "axios": "^0.18.0",
     "@babel/core": "^7.4.3",
     "@storybook/addon-actions": "^5.0.10",
     "@storybook/addon-backgrounds": "^5.0.10",
@@ -46,5 +47,6 @@
       "<rootDir>/node_modules/",
       "<rootDir>/.git/"
     ]
-  }
+  },
+  "proxy": "http://localhost:8001"
 }
