@@ -4,6 +4,7 @@ import InterviewerList from "components/InterviewerList.js"
 import Button from "components/Button.js"
 
 
+// ---FORM COMPONENT---
 export default function Form(props) {
   const [student, setStudent] = React.useState(props.student || "");
   const [interviewer, setInterviewer] = React.useState(props.interviewer || null);
@@ -42,7 +43,7 @@ export default function Form(props) {
       <section className="appointment__card-right">
         <section className="appointment__actions">
           <Button danger onClick={props.onCancel}>Cancel</Button>
-          <Button confirm onClick={props.onSave}>Save</Button>
+          <Button confirm onClick={() => props.onSave (student, interviewer)}>Save</Button>
         </section>
       </section>
     </main>
