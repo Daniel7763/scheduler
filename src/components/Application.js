@@ -62,10 +62,10 @@ export default function Application(props) {
       });
     })
 
-    .catch(error => {
-      // Handle error if the request fails
-      console.log(error);
-    });
+    // .catch(error => {
+    //   // Handle error if the request fails
+    //   console.log(error);
+    // });
   }
   
   //appointments
@@ -104,6 +104,11 @@ export default function Application(props) {
         ...prev, 
         appointments
       }))
+
+      // .catch(error => {
+      //   // Handle error if the request fails
+      //   console.log(error);
+      // });
     });
   }
   
