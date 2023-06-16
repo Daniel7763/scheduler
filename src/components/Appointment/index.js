@@ -66,7 +66,8 @@ export default function Appointment(props) {
   }
 
   return (
-    <article className="appointment">
+    // <article className="appointment">
+    <article className="appointment" data-testid="appointment" >
 
     <Header time={props.time} />
     
@@ -114,7 +115,7 @@ export default function Appointment(props) {
     {/* CONFIRM */}
     {mode === CONFIRM && (
       <Confirm
-        message = "Are you sure"
+        message = "Are you sure you want to cancel this appointment?"
         onConfirm={() => deleting()}
         //code for the confirm button that send the information to === null
         onCancel = {back}

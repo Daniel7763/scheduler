@@ -17,7 +17,7 @@ export default function useApplicationData() {
   //bookInterview function
   function bookInterview(id, interview) {
 
-    console.log(id, interview);
+    // console.log(id, interview);
 
     const appointment = {
       ...state.appointments[id],
@@ -35,14 +35,26 @@ export default function useApplicationData() {
     }));
 
     return axios.put(`/api/appointments/${id}`, { interview })
-    .then(() => {
-      setState({
-        ...state,
-        appointments
+      .then(() => {
+        setState({
+          ...state,
+          appointments
+        });
+        updateSpots(appointments);
       });
-      updateSpots(appointments);
-    });
   }
+
+  // return axios
+  // .put(`/api/appointments/${id}`, {
+  //   interview: appointment.interview,
+  // })
+  // .then((resp) => {
+  //   setState({
+  //     ...state,
+  //     appointments,
+  //     days,
+  //   });
+  // });
 
   //cancelInterview function
   function cancelInterview(id) {
@@ -60,18 +72,29 @@ export default function useApplicationData() {
         [id]: appointment
       };
   
-      setState(prev => ({
-        //use ...prev instead of ...state to avoid bugs
-        ...prev, 
-        appointments: {
-          ...prev.appointments,
-          [id]: appointment
-        }
-      }))
+  //     setState(prev => ({
+  //       //use ...prev instead of ...state to avoid bugs
+  //       ...prev, 
+  //       appointments: {
+  //         ...prev.appointments,
+  //         [id]: appointment
+  //       }
+  //     }))
 
-      updateSpots(appointments);
-    });
-  }
+  //     updateSpots(appointments);
+  //   });
+  // }
+
+    setState(prev => ({
+      ...prev,
+      appointments: {
+        ...prev.appointments,
+        [id]: appointment
+      }
+    }));
+    updateSpots(appointments);
+  });
+}
 
   //useEffect - AXIOS
   useEffect(() => {
