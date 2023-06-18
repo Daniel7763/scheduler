@@ -99,8 +99,6 @@ test("getInterviewersForDay returns an array", () => {
 
 test("getInterviewersForDay returns an array with a length matching the number of interviwers for that day", () => {
   const result = getInterviewersForDay(state, "Monday");
-  //check if length of result array is === to the amount of interviewers
-  //array.length === 1
   expect(result.length).toBe(1)
 });
 

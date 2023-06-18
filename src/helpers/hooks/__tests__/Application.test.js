@@ -18,27 +18,8 @@ import Application from "components/Application";
 import { act } from "react-test-renderer";
 
 jest.mock("axios")
-// axios.mockResolvedValue()
-// jest.mock("axios", () => ({
-//   put: jest.fn(),
-// }));
 
 afterEach(cleanup);
-
-/* A test that renders a React Component */
-
-// it("renders without crashing", () => {
-//   render(<Application />);
-// });
-
-// it("defaults to Monday and changes the schedule when a new day is selected", () => {
-//   const { getByText } = render(<Application />);
-
-//   return waitForElement(() => getByText("Monday")).then(() => {
-//     fireEvent.click(getByText("Tuesday"));
-//     expect(getByText("Leopold Silvers")).toBeInTheDocument();
-//   });
-// });
 
 describe("Application", () => {
 
@@ -91,6 +72,7 @@ describe("Application", () => {
   //----------3
 
   it("loads data, cancels an interview and increases the spots remaining for Monday by 1", async () => {
+    //would like to keep these steps for future reminders
     // 1. Render the Application.
     const { container } = render(<Application />);
   
@@ -138,9 +120,6 @@ describe("Application", () => {
       "appointment"
     ).find((appointment) => queryByText(appointment, "Archie Cohen"));
 
-    //tried this to fix issue1/2
-    // act(() => {
-
     fireEvent.click(getByAltText(booked, "Edit"));
 
     fireEvent.change(getByPlaceholderText(booked, /enter student name/i), {
@@ -150,9 +129,6 @@ describe("Application", () => {
     fireEvent.click(getByAltText(booked, "Sylvia Palmer"));
 
     fireEvent.click(getByText(booked, "Save"));
-
-    // });
-    //tried this to fix issue2/2
 
     expect(getByText(booked, "SAVING")).toBeInTheDocument();
 

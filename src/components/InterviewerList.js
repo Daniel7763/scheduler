@@ -5,7 +5,6 @@ import "components/InterviewerList.scss";
 
 
 export default function InterviewerList(props) {
-// console.log(props.interviewers, "interviewers")
 
   let Interviewers = props.interviewers.map((interviewer) => {
     return (
@@ -28,8 +27,7 @@ export default function InterviewerList(props) {
   );
 }
 
-//test code
-//need to find why test was not working
+
 InterviewerList.propTypes = {
   interviewers: PropTypes.array.isRequired
 };

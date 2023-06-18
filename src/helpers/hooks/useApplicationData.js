@@ -44,17 +44,6 @@ export default function useApplicationData() {
       });
   }
 
-  // return axios
-  // .put(`/api/appointments/${id}`, {
-  //   interview: appointment.interview,
-  // })
-  // .then((resp) => {
-  //   setState({
-  //     ...state,
-  //     appointments,
-  //     days,
-  //   });
-  // });
 
   //cancelInterview function
   function cancelInterview(id) {
@@ -72,18 +61,7 @@ export default function useApplicationData() {
         [id]: appointment
       };
   
-  //     setState(prev => ({
-  //       //use ...prev instead of ...state to avoid bugs
-  //       ...prev, 
-  //       appointments: {
-  //         ...prev.appointments,
-  //         [id]: appointment
-  //       }
-  //     }))
 
-  //     updateSpots(appointments);
-  //   });
-  // }
 
     setState(prev => ({
       ...prev,

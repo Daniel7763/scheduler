@@ -117,9 +117,7 @@ export default function Appointment(props) {
       <Confirm
         message = "Are you sure you want to cancel this appointment?"
         onConfirm={() => deleting()}
-        //code for the confirm button that send the information to === null
         onCancel = {back}
-        //code for the cancel button that just returns to the show page
       />
     )}
 
@@ -130,9 +128,7 @@ export default function Appointment(props) {
         interviewer={props.interview.interviewer.id}
         interviewers={props.interviewers}
         onSave={save}
-        //code to save and send to show
         onCancel={back}
-        //code to cancel editing and return to show
       />
     )}
 
@@ -156,26 +152,6 @@ export default function Appointment(props) {
     </article>
   );
 }
-
-
-    {/* SAVING TO SHOW
-    {mode === SAVING &&(
-      <Status
-        message = {"SAVING"}
-      /> )} */}
-
-
-
-      {/* {props.interview ? (
-        <Show
-          student={props.interview.student}
-          interviewer={props.interview.interviewer}
-          onEdit={props.onEdit}
-          onDelete={props.onDelete}
-
-        />) : (<Empty />)} */}
-
-
 
 
 

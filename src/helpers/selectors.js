@@ -1,17 +1,3 @@
-// function selectUserByName(state, name) {
-//   const filteredNames = state.users.filter(user => user.name === name);
-//   return filteredNames;
-// }
-
-// export function getAppointmentsForDay(state, day) {
-//   const selectedDay = state.days.find((dayObj) => dayObj.name === day);
-
-//   if (selectedDay) {
-//     return selectedDay.appointments.map((appointmentId) => state.appointments[appointmentId]);
-//   } else {
-//     return [];
-//   }
-// }
 
 // Gets the appointments for a given day
 export function getAppointmentsForDay(state, day) {
