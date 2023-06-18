@@ -9,8 +9,6 @@ export default function Show(props) {
         <section className="interviewer">
           <h4 className="text--light">Interviewer</h4>
 
-          {/* console.log("---props.interviewer---", props.interviewer); */}
-
           <h3 className="text--regular">{props.interviewer.name}</h3>
         </section>
       </section>
